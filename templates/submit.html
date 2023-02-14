@@ -1,4 +1,4 @@
-{% extends 'main.html' %}
+{% extends 'base.html' %}
 
 {% block header %}
     <h2> Form </h2>
@@ -14,4 +14,9 @@
         <br>
         <input type="submit" value="Submit message">
     </form>
+
+{% if name %}
+Hello <b>{{name}}</b>, thank you for submitting your message!
+{% endif %}
+
 {% endblock %}
