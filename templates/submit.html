@@ -1,0 +1,17 @@
+{% extends 'main.html' %}
+
+{% block header %}
+    <h2> Form </h2>
+{% endblock %}
+
+{% block content %}
+    <form method = "post">
+        <label for="message"> What is your message?</label>
+        <input type="text" id="message" name="message">
+        <br>
+        <label for="name"> What is your name/handle?</label>
+        <input type="text" id="name" name="name">
+        <br>
+        <input type="submit" value="Submit message">
+    </form>
+{% endblock %}
