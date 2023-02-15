@@ -1,15 +1,15 @@
 {% extends 'base.html' %}
 
 {% block header %}
-    <h2> View Previous Messages </h2>
+    <h2> View a few previous messages </h2>
 {% endblock %}
 
 {% block content %}
 
 {% for message in messages %}
-    <p> message[1] 
+    <p> {{ message[1] }} 
     <br>
-    - <em> message[0] </em>
+    - <em> {{ message[0] }}</em>
     </p>
 {% endfor %}
 

@@ -1,0 +1,26 @@
+html {
+    font-family: sans-serif;
+    background: lavenderblush;
+    padding: 1rem;
+}
+
+h1 {
+    color: rgb(98, 168, 211);
+    font-family: sans-serif;
+    margin: 1rem 0;
+    text-align: center;
+}
+
+a {
+    color: CornflowerBlue;
+    text-decoration: none;
+}
+
+nav {
+    text-align: center;
+}
+
+nav a {
+    display: inline-flex;
+    padding: 1rem;
+}

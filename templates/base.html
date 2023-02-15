@@ -1,15 +1,12 @@
 <!doctype html>
 <!-- uncomment the line below later -->
-<!-- <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"> -->
-<!-- <title>{% block title %}{% endblock %}</title> -->
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 <nav>
   <h1>Message Submission Webapp!</h1>
   <!-- <b>Navigation:</b> -->
-  <ul>
-    <li><a href="{{ url_for('main') }}">Main Page</a></li>
-    <li><a href="{{ url_for('submit') }}">Submit</a></li>
-    <li><a href="{{ url_for('view') }}">View Messages</a></li>
-  </ul>
+  <a href="{{ url_for('main') }}">Home</a>       
+  <a href="{{ url_for('submit') }}">Submit a Message</a>    
+  <a href="{{ url_for('view') }}">View Messages</a> 
 </nav>
 <section class="content">
   <header>
