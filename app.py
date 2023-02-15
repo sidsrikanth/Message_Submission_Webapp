@@ -1,5 +1,4 @@
 from flask import Flask, g, render_template, request, url_for
-import sqlite3
 
 app = Flask(__name__)
 
@@ -16,11 +15,6 @@ def submit():
         insert_message(request)
         return render_template("submit.html")
 
-@app.route("/view/")
-def view(): # deleted messages as argument
-    messages = random_messages(5)
-    return render_template('view.html', messages = messages)
-
 def get_message_db():
   # write some helpful comments here
   try:
@@ -28,14 +22,14 @@ def get_message_db():
   except:
     g.message_db = sqlite3.connect("messages_db.sqlite")
     cmd = """CREATE TABLE IF NOT EXISTS messages (
-    id INTEGER NOT NULL IDENTITY PRIMARY KEY, 
+    id INT NOT NULL IDENTITY PRIMARY KEY, 
     handle TEXT,
     message TEXT,
     );
-    """
+    """ # replace this with your SQL query
     cursor = g.message_db.cursor()
     cursor.execute(cmd)
-    g.message_db.commit()
+    # conn.commit()
     return g.message_db
 
 def insert_message(request):
@@ -56,9 +50,5 @@ def random_messages(n):
     ORDER BY RAND()
     LIMIT ?
     '''
-    cur.execute(cmd, (n,))
-    rows = cur.fetchall()
-    messages = [(row[1], row[2]) for row in rows]
+    cur.execute(cmd, (n))
     conn.close()
-    return messages
-    
