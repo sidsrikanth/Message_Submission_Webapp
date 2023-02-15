@@ -2,6 +2,8 @@ from flask import Flask, g, render_template, request, url_for
 
 app = Flask(__name__)
 
+DB_NAME = 'data/messages.db'
+
 @app.route("/")
 def main():
     return render_template('main.html') # replace with main.html
@@ -22,14 +24,14 @@ def get_message_db():
   except:
     g.message_db = sqlite3.connect("messages_db.sqlite")
     cmd = """CREATE TABLE IF NOT EXISTS messages (
-    id INT NOT NULL IDENTITY PRIMARY KEY, 
+    id INTEGER NOT NULL IDENTITY PRIMARY KEY, 
     handle TEXT,
     message TEXT,
     );
-    """ # replace this with your SQL query
+    """
     cursor = g.message_db.cursor()
     cursor.execute(cmd)
-    # conn.commit()
+    g.message_db.commit()
     return g.message_db
 
 def insert_message(request):
