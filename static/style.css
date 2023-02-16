@@ -6,9 +6,10 @@ html {
 
 h1 {
     color: rgb(98, 168, 211);
-    font-family: sans-serif;
-    margin: 1rem 0;
+    font-family: Papyrus, fantasy;
+    margin: 1rem 0.5;
     text-align: center;
+    font-size: 32px;
 }
 
 a {
@@ -22,5 +23,5 @@ nav {
 
 nav a {
     display: inline-flex;
-    padding: 1rem;
+    padding: 0.5rem;
 }
